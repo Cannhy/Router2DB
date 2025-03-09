@@ -5,7 +5,7 @@ import jdk.nashorn.internal.ir.annotations.Reference;
 import java.lang.annotation.*;
 
 /**
- * @author: Guanghao Wei
+ * @author: Haoyu Chen
  * @date: 2023-05-24 13:40
  * @description: 路由策略，分表标记
  */

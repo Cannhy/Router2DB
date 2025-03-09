@@ -1,7 +1,7 @@
 package cn.itedus.middleware.db.router;
 
 /**
- * @author: Guanghao Wei
+ * @author: Haoyu Chen
  * @date: 2023-05-24 10:25
  * @description: 本地线程设置路由结果，使用了两个本地线程类记录分库、分表的路由结果
  */

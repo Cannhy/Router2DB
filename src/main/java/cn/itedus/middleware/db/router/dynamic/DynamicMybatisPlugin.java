@@ -20,7 +20,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * @author: Guanghao Wei
+ * @author: Haoyu Chen
  * @date: 2023-05-24 11:16
  * @description: Mybatis拦截器，通过对SQL语句的拦截处理，修改分表信息
  */

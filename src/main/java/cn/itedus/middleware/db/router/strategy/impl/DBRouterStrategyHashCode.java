@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 
 
 /**
- * @author: Guanghao Wei
+ * @author: Haoyu Chen
  * @date: 2023-05-24 11:16
  * @description: 哈希路由
  */
@@ -27,7 +27,8 @@ public class DBRouterStrategyHashCode implements IDBRouterStrategy {
         int size = dbRouterConfig.getDbCount() * dbRouterConfig.getTbCount();
 
         // 扰动函数；在 JDK 的 HashMap 中，对于一个元素的存放，需要进行哈希散列。而为了让散列更加均匀，所以添加了扰动函数。扩展学习；https://mp.weixin.qq.com/s/CySTVqEDK9-K1MRUwBKRCg
-        //在获取哈希值之前先对hashCode的高位和低位进行异或操作，然后在进行一次位运算，这样做可以使得哈希值更加随机，减少哈希碰撞的概率。。
+        //在获取哈希值之前先对hashCode的高位和低位进行异或操作，然后在进行一次位运算，这样做可以使得哈希值更加随机，减少哈希碰撞的概率。
+        // 在分库分表或哈希路由的场景中，直接使用 hashCode() 可能会导致哈希冲突，因为hashCode() 的低位和高位可能不够随机
         int idx = (size - 1) & (dbKeyAttr.hashCode() ^ (dbKeyAttr.hashCode() >>> 16));
 
 
